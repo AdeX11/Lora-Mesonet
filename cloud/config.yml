@@ -1,12 +1,12 @@
 mqtt:
-  broker_ip: 10.219.129.111
+  broker_ip: 10.2.1.80
   broker_port: 1884
   msg_topic: "lora_messages"
   assignment_timeout: 60
 thingsboard:
   broker_ip: "thingsboard"
   broker_port: 1883
-  api_url: "http://10.219.129.111:8080"
+  api_url: "http://10.2.1.80:8080"
   username: "tenant@thingsboard.org"
   password: "tenant"  # Replace with your tenant admin password
   default_device_type: "GPS_Station"  # New: Define a type for your dynamic devices

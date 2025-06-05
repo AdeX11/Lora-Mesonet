@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   thingsboard:
-    image: thingsboard/tb-postgres:4.0.0
+    image: thingsboard/tb-postgres:3.8.0
     ports:
       - "8080:9090"
       - "1883:1883"
@@ -28,7 +28,7 @@ services:
       - iot_network
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://10.219.129.111:8080/api/v1/status"]
+      test: ["CMD", "curl", "-f", "http://10.2.1.80:8080/api/v1/status"]
       interval: 30s
       retries: 5
       start_period: 20s
@@ -43,7 +43,7 @@ services:
     networks:
       - iot_network
     healthcheck:
-      test: ["CMD", "nc", "-z", "10.219.129.111", "1884"]
+      test: ["CMD", "nc", "-z", "10.2.1.80", "1884"]
       interval: 10s
       retries: 5
       start_period: 20s
